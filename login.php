@@ -11,6 +11,7 @@ session_start();
     <title>Login | Kiaalap - Kiaalap Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- favicon
         ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -85,7 +86,7 @@ session_start();
                                 echo '<span class="help-block small" style="color: red;">' . $_SESSION['error'] . '</span>';
                                 unset($_SESSION['error']);
                             }else if (isset($_SESSION['success'])) {
-                                echo '<span class="help-block small" style="color: red;">' . $_SESSION['success'] . '</span>';
+                                echo '<span class="help-block small" style="color: green;">' . $_SESSION['success'] . '</span>';
                                 unset($_SESSION['success']);
                             }
                             ?>
