@@ -1,222 +1,161 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
-
+<html class="no-js" lang="en">
+<?php
+session_start();
+if ($_SESSION['permission'] != 1) {
+    header("location: login.php");
+}
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>All Students | Kiaalap - Kiaalap Admin Template</title>
+    <title>Professor Profile | Kiaalap - Kiaalap Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
-		============================================ -->
+        ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Google Fonts
-		============================================ -->
+        ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Bootstrap CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- owl.carousel CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/owl.transitions.css">
     <!-- animate CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/animate.css">
     <!-- normalize CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- meanmenu icon CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/meanmenu.min.css">
     <!-- main CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/main.css">
     <!-- educate icon CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/educate-custon-icon.css">
     <!-- morrisjs CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/morrisjs/morris.css">
     <!-- mCustomScrollbar CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- metisMenu CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
     <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
     <!-- calendar CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
+    <!-- forms CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/form/all-type-forms.css">
     <!-- style CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="style.css">
     <!-- responsive CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr JS
-		============================================ -->
+        ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
     <!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-    <!-- Start Left menu area -->
-    <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
-            </div>
-            <div class="left-custom-menu-adp-wrap comment-scrollbar">
-                <nav class="sidebar-nav left-sidebar-menu-pro">
-                    <ul class="metismenu" id="menu1">
-                        <li>
-                            <a class="has-arrow" href="index.html">
-								   <span class="educate-icon educate-home icon-wrap"></span>
-								   <span class="mini-click-non">Education</span>
-								</a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
-                                <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
-                                <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
-                                <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
-                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a title="Landing Page" href="events.html" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Professors</span></a>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+   <!-- Start Left menu area -->
+   <div class="left-sidebar-pro">
+    <nav id="sidebar" class="">
+        <div class="sidebar-header">
+            <a href="index.php"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+            <strong><a href="index.php"><img src="img/logo/logosn.png" alt="" /></a></strong>
+        </div>
+        <div class="left-custom-menu-adp-wrap comment-scrollbar">
+            <nav class="sidebar-nav left-sidebar-menu-pro">
+                <ul class="metismenu" id="menu1">
+                    <li>
+                        <a title="Landing Page" href="events.html" aria-expanded="false"><span
+                                class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span>
+                            <span class="mini-click-non">Event</span></a>
+                    </li>
+                    <?php
+                    if ($_SESSION['permission'] == 0) {
+                        echo '<li>
+                            <a class="has-arrow" href="all-students.php" aria-expanded="false"><span
+                                    class="educate-icon educate-student icon-wrap"></span> <span
+                                    class="mini-click-non">Students</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="all-professors.html"><span class="mini-sub-pro">All Professors</span></a></li>
-                                <li><a title="Add Professor" href="add-professor.html"><span class="mini-sub-pro">Add Professor</span></a></li>
-                                <li><a title="Edit Professor" href="edit-professor.html"><span class="mini-sub-pro">Edit Professor</span></a></li>
-                                <li><a title="Professor Profile" href="professor-profile.html"><span class="mini-sub-pro">Professor Profile</span></a></li>
+                                <li><a title="All Professors" href="all-professors.php"><span class="mini-sub-pro">All
+                                            Professors</span></a></li>
+                                <li><a title="All Courses" href="all-courses.php"><span class="mini-sub-pro">All
+                                            Courses</span></a></li>
+                                <!-- <li><a title="All Students" href="all-students.php"><span class="mini-sub-pro">All
+                                            Students</span></a></li> -->
+                                <li><a title="Add Students" href="add-student.php"><span class="mini-sub-pro">Add
+                                            Student</span></a></li>
+
+                                <li><a title="Students Profile" href="student-profile.php"><span
+                                            class="mini-sub-pro">Student Profile</span></a></li>
                             </ul>
-                        </li>
-                        <li class="active">
-                            <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="all-students.html"><span class="mini-sub-pro">All Students</span></a></li>
-                                <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">Add Student</span></a></li>
-                                <li><a title="Edit Students" href="edit-student.html"><span class="mini-sub-pro">Edit Student</span></a></li>
-                                <li><a title="Students Profile" href="student-profile.html"><span class="mini-sub-pro">Student Profile</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Courses</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Courses</span></a></li>
-                                <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">Add Course</span></a></li>
-                                <li><a title="Edit Courses" href="edit-course.html"><span class="mini-sub-pro">Edit Course</span></a></li>
-                                <li><a title="Courses Profile" href="course-info.html"><span class="mini-sub-pro">Courses Info</span></a></li>
-                                <li><a title="course Payment" href="course-payment.html"><span class="mini-sub-pro">Courses Payment</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Library" href="library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
-                                <li><a title="Add Library" href="add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
-                                <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
-                                <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
-                                <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
-                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
-                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Interface</span></a>
-                            <ul class="submenu-angle interface-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Google Map" href="google-map.html"><span class="mini-sub-pro">Google Map</span></a></li>
-                                <li><a title="Data Maps" href="data-maps.html"><span class="mini-sub-pro">Data Maps</span></a></li>
-                                <li><a title="Pdf Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">Pdf Viewer</span></a></li>
-                                <li><a title="X-Editable" href="x-editable.html"><span class="mini-sub-pro">X-Editable</span></a></li>
-                                <li><a title="Code Editor" href="code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
-                                <li><a title="Tree View" href="tree-view.html"><span class="mini-sub-pro">Tree View</span></a></li>
-                                <li><a title="Preloader" href="preloader.html"><span class="mini-sub-pro">Preloader</span></a></li>
-                                <li><a title="Images Cropper" href="images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Charts</span></a>
-                            <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
-                                <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
-                                <li><a title="Area Charts" href="area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
-                                <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
-                                <li><a title="C3 Charts" href="c3.html"><span class="mini-sub-pro">C3 Charts</span></a></li>
-                                <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
-                                <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Tables</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
-                                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-form icon-wrap"></span> <span class="mini-click-non">Forms Elements</span></a>
-                            <ul class="submenu-angle form-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
-                                <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Ad Form Elements</span></a></li>
-                                <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
-                                <li><a title="Multi Upload" href="multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
-                                <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
-                                <li><a title="Dual List Box" href="dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-apps icon-wrap"></span> <span class="mini-click-non">App views</span></a>
-                            <ul class="submenu-angle app-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
-                                <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
-                                <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
-                                <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
-                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
-                                <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
-                            </ul>
-                        </li>
-                        <li id="removable">
-                            <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap"></span> <span class="mini-click-non">Pages</span></a>
-                            <ul class="submenu-angle page-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
-                                <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
-                                <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
-                                <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
-                                <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
-                                <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </nav>
-    </div>
-    <!-- End Left menu area -->
+                        </li>';
+                    } else if ($_SESSION['permission'] == 1) {
+                        echo '<li>
+                        <a class="has-arrow" href="all-professors.php" aria-expanded="false"><span
+                                class="educate-icon educate-professor icon-wrap"></span> <span
+                                class="mini-click-non">Professors</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="All Courses" href="all-courses.php"><span class="mini-sub-pro">All
+                                        Courses</span></a></li>
+                            <li><a title="Add Courses" href="add-course.php"><span class="mini-sub-pro">Add
+                                        Course</span></a></li>
+                            <li><a title="Add Professor" href="add-professor.php"><span class="mini-sub-pro">Add
+                                        Professor</span></a></li>
+
+                            <li><a title="Professor Profile" href="professor-profile.php"><span
+                                        class="mini-sub-pro">Professor Profile</span></a></li>
+                        </ul>
+                    </li>';
+                    } else if ($_SESSION['permission'] == 2) {
+                        echo '<li>
+                        <a class="has-arrow" href="all-professors.php" aria-expanded="false"><span
+                                class="educate-icon educate-professor icon-wrap"></span> <span
+                                class="mini-click-non">Admin</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="All Courses" href="all-courses.php"><span class="mini-sub-pro">All
+                                        Courses</span></a></li>
+                            <li><a title="All Professors" href="all-professors.php"><span class="mini-sub-pro">All
+                                        Professors</span></a></li>
+                            <li><a title="All Students" href="all-students.php"><span class="mini-sub-pro">All
+                                        Students</span></a></li>
+                        </ul>
+                    </li>';
+                    }
+                    ?>
+
+
+
+
+
+
+                </ul>
+            </nav>
+        </div>
+    </nav>
+</div>
+<!-- End Left menu area -->
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
@@ -238,8 +177,8 @@
                                     <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
                                         <div class="menu-switcher-pro">
                                             <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-													<i class="educate-icon educate-nav"></i>
-												</button>
+                                                    <i class="educate-icon educate-nav"></i>
+                                                </button>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
@@ -391,10 +330,10 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="img/product/pro4.jpg" alt="" />
-															<span class="admin-name">Prof.Anderson</span>
-															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
-														</a>
+                                                            <img src="img/product/pro4.jpg" alt="" />
+                                                            <span class="admin-name">Prof.Anderson</span>
+                                                            <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+                                                        </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
                                                         </li>
@@ -734,9 +673,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
                                                                                             <label class="onoffswitch-label" for="example">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -750,9 +689,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
                                                                                             <label class="onoffswitch-label" for="example3">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -766,9 +705,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
                                                                                             <label class="onoffswitch-label" for="example4">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -782,9 +721,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
                                                                                             <label class="onoffswitch-label" for="example7">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -798,9 +737,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
                                                                                             <label class="onoffswitch-label" for="example2">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -814,9 +753,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
                                                                                             <label class="onoffswitch-label" for="example6">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -830,9 +769,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
                                                                                             <label class="onoffswitch-label" for="example5">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                    <span class="onoffswitch-inner"></span>
+                                                                                                    <span class="onoffswitch-switch"></span>
+                                                                                                </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -930,8 +869,8 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#demomi" href="#">Mailbox <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                            <ul id="demomi" class="collapse dropdown-header-top">
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="demo" class="collapse dropdown-header-top">
                                                 <li><a href="mailbox.html">Inbox</a>
                                                 </li>
                                                 <li><a href="mailbox-view.html">View Mail</a>
@@ -1044,7 +983,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list">
+                            <div class="breadcome-list single-page-breadcome">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="breadcome-heading">
@@ -1058,7 +997,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">All Students</span>
+                                            <li><span class="bread-blod">Professor Profile</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -1069,104 +1008,451 @@
                 </div>
             </div>
         </div>
-        <div class="contacts-area mg-b-15">
+        <!-- Single pro tab review Start-->
+        <div class="single-pro-review-area mt-t-30 mg-b-15">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std res-mg-b-30">
-                            <div class="student-img">
-                                <img src="img/student/1.jpg" alt="" />
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="profile-info-inner">
+                            <div class="profile-img">
+                                <img src="img/profile/1.jpg" alt="" />
                             </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std res-mg-b-30">
-                            <div class="student-img">
-                                <img src="img/student/2.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std res-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                            <div class="student-img">
-                                <img src="img/student/3.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std res-tablet-mg-t-30 dk-res-t-pro-30">
-                            <div class="student-img">
-                                <img src="img/student/4.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std mg-t-30">
-                            <div class="student-img">
-                                <img src="img/student/1.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
+                            <div class="profile-details-hr">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                                        <div class="address-hr">
+                                            <p><b>Name</b><br /> Fly Zend</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                                        <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
+                                            <p><b>Designation</b><br /> Head of Dept.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                                        <div class="address-hr">
+                                            <p><b>Email ID</b><br /> fly@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                                        <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
+                                            <p><b>Phone</b><br /> +01962067309</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="address-hr">
+                                            <p><b>Address</b><br /> E104, catn-2, Chandlodia Ahmedabad Gujarat, UK.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="address-hr">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <h3>500</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="address-hr">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <h3>900</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="address-hr">
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <h3>600</h3>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std mg-t-30">
-                            <div class="student-img">
-                                <img src="img/student/2.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std mg-t-30">
-                            <div class="student-img">
-                                <img src="img/student/3.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="student-inner-std mg-t-30">
-                            <div class="student-img">
-                                <img src="img/student/4.jpg" alt="" />
-                            </div>
-                            <div class="student-dtl">
-                                <h2>Alexam Angles</h2>
-                                <p class="dp">Computer Science</p>
-                                <p class="dp-ag"><b>Age:</b> 20 Years</p>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="product-payment-inner-st res-mg-t-30 analysis-progrebar-ctn">
+                            <ul id="myTabedu1" class="tab-review-design">
+                                <li class="active"><a href="#description">Activity</a></li>
+                                <li><a href="#reviews"> Biography</a></li>
+                                <li><a href="#INFORMATION">Update Details</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in" id="description">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="chat-discussion" style="height: auto">
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/1.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Michael Smith </a>
+                                                            <span class="message-date"> Mon Jan 26 2015 - 18:39:23 </span>
+                                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                                            </span>
+                                                            <div class="m-t-md mg-t-10">
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                                <a class="btn btn-xs btn-success"><i class="fa fa-heart"></i> Love</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/2.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Karl Jordan </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover.
+                                                                    </span>
+                                                            <div class="m-t-md mg-t-10">
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-heart"></i> Love</a>
+                                                                <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Message</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/3.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Michael Smith </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+                                                                    </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/4.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Alice Jordan </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                                                        It uses a dictionary of over 200 Latin words.
+                                                                    </span>
+                                                            <div class="m-t-md mg-t-10">
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                                <a class="btn btn-xs btn-warning"><i class="fa fa-eye"></i> Nudge</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/1.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Mark Smith </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                                                        It uses a dictionary of over 200 Latin words.
+                                                                    </span>
+                                                            <div class="m-t-md mg-t-10">
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                                <a class="btn btn-xs btn-success"><i class="fa fa-heart"></i> Love</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/2.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Karl Jordan </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover.
+                                                                    </span>
+                                                            <div class="m-t-md mg-t-10">
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-heart"></i> Love</a>
+                                                                <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Message</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/3.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Michael Smith </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+                                                                    </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-message">
+                                                        <div class="profile-hdtc">
+                                                             <img class="message-avatar" src="img/contact/4.jpg" alt="">
+                                                        </div>
+                                                        <div class="message">
+                                                            <a class="message-author" href="#"> Alice Jordan </a>
+                                                            <span class="message-date">  Fri Jan 25 2015 - 11:12:36 </span>
+                                                            <span class="message-content">
+                                                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                                                        It uses a dictionary of over 200 Latin words.
+                                                                    </span>
+                                                            <div class="m-t-md mg-t-10">
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                                <a class="btn btn-xs btn-default"><i class="fa fa-heart"></i> Love</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-tab-list tab-pane fade" id="reviews">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Full Name</b><br /> Fly Zend</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Mobile</b><br /> 01962067309</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Email</b><br /> fly@gmail.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Location</b><br /> UK</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="content-profile">
+                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mg-b-15">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="skill-title">
+                                                                    <h2>Skill Set</h2>
+                                                                    <hr />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-skill">
+                                                            <h2>Java</h2>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 90%;" class="progress-bar progress-yellow"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-skill">
+                                                            <h2>Php</h2>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 80%;" class="progress-bar progress-green"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-skill">
+                                                            <h2>Apps</h2>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 70%;" class="progress-bar progress-blue"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-skill">
+                                                            <h2>C#</h2>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 60%;" class="progress-bar progress-red"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mg-b-15">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="skill-title">
+                                                                    <h2>Education</h2>
+                                                                    <hr />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ex-pro">
+                                                            <ul>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mg-b-15">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="skill-title">
+                                                                    <h2>Experience</h2>
+                                                                    <hr />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ex-pro">
+                                                            <ul>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="skill-title">
+                                                                    <h2>Subjects</h2>
+                                                                    <hr />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ex-pro">
+                                                            <ul>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-tab-list tab-pane fade" id="INFORMATION">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input name="number" type="text" class="form-control" placeholder="First Name">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Last Name">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Address">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Date of Birth">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Department">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control" placeholder="Pincode">
+                                                        </div>
+                                                        <div class="file-upload-inner ts-forms">
+                                                            <div class="input prepend-big-btn">
+                                                                <label class="icon-right" for="prepend-big-btn">
+                                                                        <i class="fa fa-download"></i>
+                                                                    </label>
+                                                                <div class="file-button">
+                                                                    Browse
+                                                                    <input type="file" onchange="document.getElementById('prepend-big-btn').value = this.value;">
+                                                                </div>
+                                                                <input type="text" id="prepend-big-btn" placeholder="no file selected">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group sm-res-mg-15 tbpf-res-mg-15">
+                                                            <input type="text" class="form-control" placeholder="Description">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                <option>Select Gender</option>
+                                                                <option>Male</option>
+                                                                <option>Female</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                    <option>Select country</option>
+                                                                    <option>India</option>
+                                                                    <option>Pakistan</option>
+                                                                    <option>Amerika</option>
+                                                                    <option>China</option>
+                                                                    <option>Dubai</option>
+                                                                    <option>Nepal</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                    <option>Select state</option>
+                                                                    <option>Gujarat</option>
+                                                                    <option>Maharastra</option>
+                                                                    <option>Rajastan</option>
+                                                                    <option>Maharastra</option>
+                                                                    <option>Rajastan</option>
+                                                                    <option>Gujarat</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                    <option>Select city</option>
+                                                                    <option>Surat</option>
+                                                                    <option>Baroda</option>
+                                                                    <option>Navsari</option>
+                                                                    <option>Baroda</option>
+                                                                    <option>Surat</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Website URL">
+                                                        </div>
+                                                        <input type="number" class="form-control" placeholder="Mobile no.">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="payment-adress mg-t-15">
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1176,7 +1462,7 @@
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12">
                         <div class="footer-copy-right">
                             <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
                         </div>
@@ -1187,55 +1473,57 @@
     </div>
 
     <!-- jquery
-		============================================ -->
+        ============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
-		============================================ -->
+        ============================================ -->
     <script src="js/bootstrap.min.js"></script>
     <!-- wow JS
-		============================================ -->
+        ============================================ -->
     <script src="js/wow.min.js"></script>
     <!-- price-slider JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery-price-slider.js"></script>
     <!-- meanmenu JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery.meanmenu.js"></script>
     <!-- owl.carousel JS
-		============================================ -->
+        ============================================ -->
     <script src="js/owl.carousel.min.js"></script>
     <!-- sticky JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery.sticky.js"></script>
     <!-- scrollUp JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- mCustomScrollbar JS
-		============================================ -->
+        ============================================ -->
     <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
     <!-- metisMenu JS
-		============================================ -->
+        ============================================ -->
     <script src="js/metisMenu/metisMenu.min.js"></script>
     <script src="js/metisMenu/metisMenu-active.js"></script>
     <!-- morrisjs JS
-		============================================ -->
+        ============================================ -->
     <script src="js/sparkline/jquery.sparkline.min.js"></script>
     <script src="js/sparkline/jquery.charts-sparkline.js"></script>
-    <script src="js/sparkline/sparkline-active.js"></script>
     <!-- calendar JS
-		============================================ -->
+        ============================================ -->
     <script src="js/calendar/moment.min.js"></script>
     <script src="js/calendar/fullcalendar.min.js"></script>
     <script src="js/calendar/fullcalendar-active.js"></script>
+    <!-- tab JS
+        ============================================ -->
+    <script src="js/tab.js"></script>
     <!-- plugins JS
-		============================================ -->
+        ============================================ -->
     <script src="js/plugins.js"></script>
     <!-- main JS
-		============================================ -->
+        ============================================ -->
     <script src="js/main.js"></script>
     <!-- tawk chat JS
-		============================================ -->
+        ============================================ -->
     <script src="js/tawk-chat.js"></script>
 </body>
 

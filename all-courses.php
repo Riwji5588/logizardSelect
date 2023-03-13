@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
+if (!($_SESSION['permission']== 1 ||$_SESSION['permission']== 0  )) {
     header("location: login.php");
 }
 ?>
@@ -231,6 +231,196 @@ if (!isset($_SESSION['username'])) {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" bis_skin_checked="1">
+            <div class="row" bis_skin_checked="1">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner res-mg-b-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/1.jpg" alt=""></a>
+                            <h2>Apps Development</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/2.jpg" alt=""></a>
+                            <h2>Illustrator CC 2018</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner res-mg-t-30 dk-res-t-pro-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/3.jpg" alt=""></a>
+                            <h2>Indesign cs6 2018</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner res-mg-t-30 dk-res-t-pro-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/1.jpg" alt=""></a>
+                            <h2>Web Development</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-15" bis_skin_checked="1">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner mg-t-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/1.jpg" alt=""></a>
+                            <h2>Apps Development</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner mg-t-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/2.jpg" alt=""></a>
+                            <h2>Illustrator CC 2018</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner mg-t-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/3.jpg" alt=""></a>
+                            <h2>Indesign cs6 2018</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" bis_skin_checked="1">
+                    <div class="courses-inner mg-t-30" bis_skin_checked="1">
+                        <div class="courses-title" bis_skin_checked="1">
+                            <a href="#"><img src="img/courses/1.jpg" alt=""></a>
+                            <h2>Web Development</h2>
+                        </div>
+                        <div class="courses-alaltic" bis_skin_checked="1">
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1
+                                Year</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
+                            <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span>
+                                500</span>
+                        </div>
+                        <div class="course-des" bis_skin_checked="1">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Duration:</b> 6 Months</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Professor:</b> Jane Doe</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Students:</b> 100+</p>
+                        </div>
+                        <div class="product-buttons" bis_skin_checked="1">
+                            <button type="button" class="button-default cart-btn">Read More</button>
                         </div>
                     </div>
                 </div>

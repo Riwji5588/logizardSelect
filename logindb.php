@@ -22,8 +22,11 @@
         } else {
             $id = array_keys($data)[0];
             $hash_password = $data[$id]['password']; 
+            $permission = $data[$id]['permission']; 
             if (password_verify($password, $hash_password)) {
-                header('Location: index.html');
+                $_SESSION['username'] =  $username ;
+                $_SESSION['permission'] =  $permission ;
+                header('Location: index.php');
             } else {
                 $_SESSION['error'] = "Invalid Password" ; 
                 header("Location: login.php");
